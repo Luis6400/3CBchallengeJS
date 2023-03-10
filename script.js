@@ -18,17 +18,17 @@ function generatePassword(len, low, upp, num, spec) {
             count--;
             break;
           case 1:
-            rand = Math.floor(Math.random() * 9 | 0);
+            rand = Math.floor(Math.random() * 9);
             password += rand;
             break;
           case 2:
             var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-            rand = Math.floor(Math.random() * 25 | 0);
+            rand = Math.floor(Math.random() * 25);
             password += alphabet[rand];
             break;
           case 3:
             var bigAlphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-            rand = Math.floor(Math.random() * 25 | 0);
+            rand = Math.floor(Math.random() * 25);
             password += bigAlphabet[rand];
             break;
           case 4:
@@ -50,17 +50,17 @@ function generatePassword(len, low, upp, num, spec) {
             count--;
             break;
           case 1:
-            rand = Math.floor(Math.random() * 9 | 0);
+            rand = Math.floor(Math.random() * 9);
             password += rand;
             break;
           case 2:
             var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-            rand = Math.floor(Math.random() * 25 | 0);
+            rand = Math.floor(Math.random() * 25);
             password += alphabet[rand];
             break;
           case 3:
             var bigAlphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-            rand = Math.floor(Math.random() * 25 | 0);
+            rand = Math.floor(Math.random() * 25);
             password += bigAlphabet[rand];
             break;
         }
@@ -77,12 +77,12 @@ function generatePassword(len, low, upp, num, spec) {
             break;
           case 1:
             var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-            rand = Math.floor(Math.random() * 25 | 0);
+            rand = Math.floor(Math.random() * 25);
             password += alphabet[rand];
             break;
           case 2:
             var bigAlphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-            rand = Math.floor(Math.random() * 25 | 0);
+            rand = Math.floor(Math.random() * 25);
             password += bigAlphabet[rand];
             break;
         }
@@ -92,7 +92,7 @@ function generatePassword(len, low, upp, num, spec) {
     } else if (low === true && upp === false && num === false && spec === false) {
       for (i = 0; i < len; i++) {
         var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-        rand = Math.floor(Math.random() * 25 | 0);
+        rand = Math.floor(Math.random() * 25);
         password += alphabet[rand];
       }
       
@@ -106,17 +106,17 @@ function generatePassword(len, low, upp, num, spec) {
             count--;
             break;
           case 1:
-            rand = Math.floor(Math.random() * 9 | 0);
+            rand = Math.floor(Math.random() * 9);
             password += rand;
             break;
           case 2:
             var bigAlphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-            rand = Math.floor(Math.random() * 25 | 0);
+            rand = Math.floor(Math.random() * 25);
             password += bigAlphabet[rand];
             break;
           case 3:
             var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "]", "{", "}", ";", ":", "'", "<", ">", "?", "/", "|"];
-            rand = Math.floor(Math.random() * special.length | 0);
+            rand = Math.floor(Math.random() * special.length);
             password += special[rand];
             break;
         }
@@ -132,12 +132,12 @@ function generatePassword(len, low, upp, num, spec) {
             count--;
             break;
           case 1:
-            rand = Math.floor(Math.random() * 9 | 0);
+            rand = Math.floor(Math.random() * 9);
             password += rand;
             break;
           case 2:
             var bigAlphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-            rand = Math.floor(Math.random() * 25 | 0);
+            rand = Math.floor(Math.random() * 25);
             password += bigAlphabet[rand];
             break;
         }
@@ -154,12 +154,12 @@ function generatePassword(len, low, upp, num, spec) {
             break;
           case 1:
             var bigAlphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-            rand = Math.floor(Math.random() * 25 | 0);
+            rand = Math.floor(Math.random() * 25);
             password += bigAlphabet[rand];
             break;
           case 2:
             var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "]", "{", "}", ";", ":", "'", "<", ">", "?", "/", "|"];
-            rand = Math.floor(Math.random() * special.length | 0);
+            rand = Math.floor(Math.random() * special.length);
             password += special[rand];
             break;
         }
@@ -169,7 +169,7 @@ function generatePassword(len, low, upp, num, spec) {
     } else if (low === false && upp === true && num === false && spec === false) {
       for (i = 0; i < a; i++) {
         var bigAlphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-        rand = Math.floor(Math.random() * 25 | 0);
+        rand = Math.floor(Math.random() * 25);
         password += bigAlphabet[rand];
       }
       //no upp
@@ -182,17 +182,17 @@ function generatePassword(len, low, upp, num, spec) {
             count--;
             break;
           case 1:
-            rand = Math.floor(Math.random() * 9 | 0);
+            rand = Math.floor(Math.random() * 9);
             password += rand;
             break;
           case 2:
             var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-            rand = Math.floor(Math.random() * 25 | 0);
+            rand = Math.floor(Math.random() * 25);
             password += alphabet[rand];
             break;
           case 3:
             var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "]", "{", "}", ";", ":", "'", "<", ">", "?", "/", "|"];
-            rand = Math.floor(Math.random() * special.length | 0);
+            rand = Math.floor(Math.random() * special.length);
             password += special[rand];
             break;
         }
@@ -208,12 +208,12 @@ function generatePassword(len, low, upp, num, spec) {
             count--;
             break;
           case 1:
-            rand = Math.floor(Math.random() * 9 | 0);
+            rand = Math.floor(Math.random() * 9);
             password += rand;
             break;
           case 2:
             var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-            rand = Math.floor(Math.random() * 25 | 0);
+            rand = Math.floor(Math.random() * 25);
             password += alphabet[rand];
             break;
         }
@@ -230,12 +230,12 @@ function generatePassword(len, low, upp, num, spec) {
             break;
           case 1:
             var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-            rand = Math.floor(Math.random() * 25 | 0);
+            rand = Math.floor(Math.random() * 25);
             password += alphabet[rand];
             break;
           case 2:
             var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "]", "{", "}", ";", ":", "'", "<", ">", "?", "/", "|"];
-            rand = Math.floor(Math.random() * special.length | 0);
+            rand = Math.floor(Math.random() * special.length);
             password += special[rand];
             break;
         }
@@ -245,13 +245,13 @@ function generatePassword(len, low, upp, num, spec) {
     } else if (low === false && upp === false && num === false && spec === true) {
       for (i = 0; i < a; i++) {
         var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "]", "{", "}", ";", ":", "'", "<", ">", "?", "/", "|"];
-        rand = Math.floor(Math.random() * special.length | 0);
+        rand = Math.floor(Math.random() * special.length);
         password += special[rand];
       }
       //only num
     } else if (low === false && upp === false && num === true && spec === false) {
       for (i = 0; i < a; i++) {
-        rand = Math.floor(Math.random() * 9 | 0);
+        rand = Math.floor(Math.random() * 9);
         password += rand;
       }
       //no num
@@ -265,17 +265,17 @@ function generatePassword(len, low, upp, num, spec) {
             break;
           case 1:
             var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-            rand = Math.floor(Math.random() * 25 | 0);
+            rand = Math.floor(Math.random() * 25);
             password += alphabet[rand];
             break;
           case 2:
             var bigAlphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-            rand = Math.floor(Math.random() * 25 | 0);
+            rand = Math.floor(Math.random() * 25);
             password += bigAlphabet[rand];
             break;
           case 3:
             var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "]", "{", "}", ";", ":", "'", "<", ">", "?", "/", "|"];
-            rand = Math.floor(Math.random() * special.length | 0);
+            rand = Math.floor(Math.random() * special.length);
             password += special[rand];
             break;
         }
@@ -292,12 +292,12 @@ function generatePassword(len, low, upp, num, spec) {
             count--;
             break;
           case 1:
-            rand = Math.floor(Math.random() * 9 | 0);
+            rand = Math.floor(Math.random() * 9);
             password += rand;
             break;
           case 2:
             var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "]", "{", "}", ";", ":", "'", "<", ">", "?", "/", "|"];
-            rand = Math.floor(Math.random() * special.length | 0);
+            rand = Math.floor(Math.random() * special.length);
             password += special[rand];
             break;
         }
