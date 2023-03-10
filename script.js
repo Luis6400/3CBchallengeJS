@@ -1,58 +1,346 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
-function generatePassword(a,b,c,d,e)
-{
+var passlenthnum = 0;
+function generatePassword(len, low, upp, num, spec) {
   var password = "";
-  var characters = "";
+  var a =len;
+  var count = 0;
+  for (i = 0; i < len; i++) {
+    var rand;
+    var i;
+    //all
+    if (low === true && upp === true && num === true && spec === true) {
+      for (i = 0; i < a; i++) {
+        rand = Math.floor(Math.random() * 5);
+        switch (rand) {
+          case 0:
+            i--;
+            count--;
+            break;
+          case 1:
+            rand = Math.floor(Math.random() * 9 | 0);
+            password += rand;
+            break;
+          case 2:
+            var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+            rand = Math.floor(Math.random() * 25 | 0);
+            password += alphabet[rand];
+            break;
+          case 3:
+            var bigAlphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+            rand = Math.floor(Math.random() * 25 | 0);
+            password += bigAlphabet[rand];
+            break;
+          case 4:
+            var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "]", "{", "}", ";", ":", "'", "<", ">", "?", "/", "|"];
+            rand = Math.floor(Math.random() * special.length | 0);
+            password += special[rand];
+            break;
+        }
+        
+        count++;
+      }
+      //no spec
+    } else if (low === true && upp === true && num === true && spec === false) {
+      for (i = 0; i < len; i++) {
+        rand = Math.floor(Math.random() * 4);
+        switch (rand) {
+          case 0:
+            i--;
+            count--;
+            break;
+          case 1:
+            rand = Math.floor(Math.random() * 9 | 0);
+            password += rand;
+            break;
+          case 2:
+            var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+            rand = Math.floor(Math.random() * 25 | 0);
+            password += alphabet[rand];
+            break;
+          case 3:
+            var bigAlphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+            rand = Math.floor(Math.random() * 25 | 0);
+            password += bigAlphabet[rand];
+            break;
+        }
+        
+      }
+      //no num no spec
+    } else if (low === true && upp === true && num === false && spec === false) {
+      for (i = 0; i < len; i++) {
+        rand = Math.floor(Math.random() * 3);
+        switch (rand) {
+          case 0:
+            i--;
+            count--;
+            break;
+          case 1:
+            var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+            rand = Math.floor(Math.random() * 25 | 0);
+            password += alphabet[rand];
+            break;
+          case 2:
+            var bigAlphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+            rand = Math.floor(Math.random() * 25 | 0);
+            password += bigAlphabet[rand];
+            break;
+        }
+        
+      }
+      //only low
+    } else if (low === true && upp === false && num === false && spec === false) {
+      for (i = 0; i < len; i++) {
+        var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+        rand = Math.floor(Math.random() * 25 | 0);
+        password += alphabet[rand];
+      }
+      
+      //no low
+    } else if (low === false && upp === true && num === true && spec === true) {
+      for (i = 0; i < a; i++) {
+        rand = Math.floor(Math.random() * 4);
+        switch (rand) {
+          case 0:
+            i--;
+            count--;
+            break;
+          case 1:
+            rand = Math.floor(Math.random() * 9 | 0);
+            password += rand;
+            break;
+          case 2:
+            var bigAlphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+            rand = Math.floor(Math.random() * 25 | 0);
+            password += bigAlphabet[rand];
+            break;
+          case 3:
+            var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "]", "{", "}", ";", ":", "'", "<", ">", "?", "/", "|"];
+            rand = Math.floor(Math.random() * special.length | 0);
+            password += special[rand];
+            break;
+        }
+        
+      }
+      //no low no spec
+    } else if (low === false && upp === true && num === true && spec === false) {
+      for (i = 0; i < a; i++) {
+        rand = Math.floor(Math.random() * 3);
+        switch (rand) {
+          case 0:
+            i--;
+            count--;
+            break;
+          case 1:
+            rand = Math.floor(Math.random() * 9 | 0);
+            password += rand;
+            break;
+          case 2:
+            var bigAlphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+            rand = Math.floor(Math.random() * 25 | 0);
+            password += bigAlphabet[rand];
+            break;
+        }
+        
+      }
+      //no low no num
+    } else if (low === false && upp === true && num === false && spec === true) {
+      for (i = 0; i < a; i++) {
+        rand = Math.floor(Math.random() * 3);
+        switch (rand) {
+          case 0:
+            i--;
+            count--;
+            break;
+          case 1:
+            var bigAlphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+            rand = Math.floor(Math.random() * 25 | 0);
+            password += bigAlphabet[rand];
+            break;
+          case 2:
+            var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "]", "{", "}", ";", ":", "'", "<", ">", "?", "/", "|"];
+            rand = Math.floor(Math.random() * special.length | 0);
+            password += special[rand];
+            break;
+        }
+        
+      }
+      //only upp
+    } else if (low === false && upp === true && num === false && spec === false) {
+      for (i = 0; i < a; i++) {
+        var bigAlphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+        rand = Math.floor(Math.random() * 25 | 0);
+        password += bigAlphabet[rand];
+      }
+      //no upp
+    } else if (low === true && upp === false && num === true && spec === true) {
+      for (i = 0; i < a; i++) {
+        rand = Math.floor(Math.random() * 4);
+        switch (rand) {
+          case 0:
+            i--;
+            count--;
+            break;
+          case 1:
+            rand = Math.floor(Math.random() * 9 | 0);
+            password += rand;
+            break;
+          case 2:
+            var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+            rand = Math.floor(Math.random() * 25 | 0);
+            password += alphabet[rand];
+            break;
+          case 3:
+            var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "]", "{", "}", ";", ":", "'", "<", ">", "?", "/", "|"];
+            rand = Math.floor(Math.random() * special.length | 0);
+            password += special[rand];
+            break;
+        }
+        
+      }
+      //no upp no spec
+    } else if (low === true && upp === false && num === true && spec === false) {
+      for (i = 0; i < a; i++) {
+        rand = Math.floor(Math.random() * 3);
+        switch (rand) {
+          case 0:
+            i--;
+            count--;
+            break;
+          case 1:
+            rand = Math.floor(Math.random() * 9 | 0);
+            password += rand;
+            break;
+          case 2:
+            var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+            rand = Math.floor(Math.random() * 25 | 0);
+            password += alphabet[rand];
+            break;
+        }
+        
+      }
+      //no upp no num
+    } else if (low === true && upp === false && num === false && spec === true) {
+      for (i = 0; i < a; i++) {
+        rand = Math.floor(Math.random() * 3);
+        switch (rand) {
+          case 0:
+            i--;
+            count--;
+            break;
+          case 1:
+            var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+            rand = Math.floor(Math.random() * 25 | 0);
+            password += alphabet[rand];
+            break;
+          case 2:
+            var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "]", "{", "}", ";", ":", "'", "<", ">", "?", "/", "|"];
+            rand = Math.floor(Math.random() * special.length | 0);
+            password += special[rand];
+            break;
+        }
+        
+      }
+      //only spec
+    } else if (low === false && upp === false && num === false && spec === true) {
+      for (i = 0; i < a; i++) {
+        var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "]", "{", "}", ";", ":", "'", "<", ">", "?", "/", "|"];
+        rand = Math.floor(Math.random() * special.length | 0);
+        password += special[rand];
+      }
+      //only num
+    } else if (low === false && upp === false && num === true && spec === false) {
+      for (i = 0; i < a; i++) {
+        rand = Math.floor(Math.random() * 9 | 0);
+        password += rand;
+      }
+      //no num
+    } else if (low === true && upp === true && num === false && spec === true) {
+      for (i = 0; i < a; i++) {
+        rand = Math.floor(Math.random() * 4);
+        switch (rand) {
+          case 0:
+            i--;
+            count--;
+            break;
+          case 1:
+            var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+            rand = Math.floor(Math.random() * 25 | 0);
+            password += alphabet[rand];
+            break;
+          case 2:
+            var bigAlphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+            rand = Math.floor(Math.random() * 25 | 0);
+            password += bigAlphabet[rand];
+            break;
+          case 3:
+            var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "]", "{", "}", ";", ":", "'", "<", ">", "?", "/", "|"];
+            rand = Math.floor(Math.random() * special.length | 0);
+            password += special[rand];
+            break;
+        }
+        
 
-  if (b === true) {
-    characters += "abcdefghijklmnopqrstuvwxyz";
-  }
-  if (c === true) {
-    characters += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  }
-  if (d === true) {
-    characters += "0123456789";
-  }
-  if (e === true) {
-    characters += "!@#$%^&*()_+~`|}{[]\:;?><,./-=";
-  }
+      }
+      //no upp no low
+    } else if (low === false && upp === false && num === true && spec === true) {
+      for (i = 0; i < a; i++) {
+        rand = Math.floor(Math.random() * 3);
+        switch (rand) {
+          case 0:
+            i--;
+            count--;
+            break;
+          case 1:
+            rand = Math.floor(Math.random() * 9 | 0);
+            password += rand;
+            break;
+          case 2:
+            var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "]", "{", "}", ";", ":", "'", "<", ">", "?", "/", "|"];
+            rand = Math.floor(Math.random() * special.length | 0);
+            password += special[rand];
+            break;
+        }
+        
+      }
 
-  for (var i = 0; i < a; i++) {
-    password += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    
   }
-  password = "hey";
   return password;
 }
 
 // Write password to the #password input
 function writePassword() {
   var passlength = prompt("How many characters would you like your password to be? (8-128)");
-  if (passlength < 8 || passlength > 128) {
+  var passlengthnum = Number(passlength);
+  if (passlengthnum < 8 || passlengthnum > 128) {
     alert("Please choose a number between 8 and 128");
     return;
-  }else if (passlength = isNaN(passlength)) {
+  } else if (passlengthnum == isNaN(passlengthnum)) {
     alert("Please choose a number between 8 and 128");
     return;
-  }
-  var passlength = parseInt(passlength);
+  }else if (passlengthnum == false){
+    alert("Please choose a number between 8 and 128");
+    return;
+}
+  
   var passlower = confirm("Would you like to include lowercase letters?");
   var passupper = confirm("Would you like to include uppercase letters?");
   var passnumber = confirm("Would you like to include numbers?");
   var passspecial = confirm("Would you like to include special characters?");
 
-if (passlower === false && passupper === false && passnumber === false && passspecial === false) {
-  alert("Please choose at least one character type");
-}
+  if (passlower === false && passupper === false && passnumber === false && passspecial === false) {
+    alert("Please choose at least one character type");
+  }
 
-  var password = generatePassword(passlength, passlower, passupper, passnumber, passspecial);
+  var password = generatePassword(passlengthnum, passlower, passupper, passnumber, passspecial);
   // var passwordText = document.querySelector("#password");
 
-console.log(password);
+  console.log(password);
   // passwordText.value = password;
   document.getElementById("password").innerHTML = password;
-} 
+}
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
