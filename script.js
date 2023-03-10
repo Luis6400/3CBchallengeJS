@@ -317,13 +317,13 @@ function writePassword() {
   if (passlengthnum < 8 || passlengthnum > 128) {
     alert("Please choose a number between 8 and 128");
     return;
-  } else if (passlengthnum == isNaN(passlengthnum)) {
+  }
+  // how to use typeof to check if it's a number?
+
+  if (isNaN(passlengthnum)) {
     alert("Please choose a number between 8 and 128");
     return;
-  }else if (passlengthnum == false){
-    alert("Please choose a number between 8 and 128");
-    return;
-}
+  }
   
   var passlower = confirm("Would you like to include lowercase letters?");
   var passupper = confirm("Would you like to include uppercase letters?");
