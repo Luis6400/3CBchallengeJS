@@ -2,12 +2,51 @@
 var generateBtn = document.querySelector("#generate");
 var passlenthnum = 0;
 function generatePassword(len, low, upp, num, spec) {
+  var specChar = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "]", "{", "}", ";", ":", "'", "<", ">", "?", "/", "|"];
+  var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+  var upalphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+  var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
   var password = "";
-  var a =len;
+  for (i = 0; i < len; i++) {
+    var rand = Math.floor(Math.random() * 4);
+    switch (rand) {
+      case 0:
+        if (low === true) {
+          rand = Math.floor(Math.random() * alphabet.length);
+          password += alphabet[rand];
+        }
+        break;
+      case 1:
+        if (upp === true) {
+          rand = Math.floor(Math.random() * upalphabet.length);
+          password += upalphabet[rand];
+        }
+        break;
+      case 2:
+        if (num === true) {
+          rand = Math.floor(Math.random() * numbers.length);
+          password += numbers[rand];
+        }
+        break;
+      case 3:
+        if (spec === true) {
+          rand = Math.floor(Math.random() * specChar.length);
+          password += specChar[rand];
+        }
+        break;
+      case 4:
+        break;
+    }
+  }
+  //this long mess of code was my orginal attempt, but after helping Jahsper with his code
+  //I made it more efficient and shorter
+  /*
+  var a = len;
   var count = 0;
   for (i = 0; i < len; i++) {
     var rand;
     var i;
+    
     //all
     if (low === true && upp === true && num === true && spec === true) {
       for (i = 0; i < a; i++) {
@@ -306,7 +345,7 @@ function generatePassword(len, low, upp, num, spec) {
 
     }
     
-  }
+  }*/
   return password;
 }
 
@@ -324,7 +363,7 @@ function writePassword() {
     alert("Please choose a number between 8 and 128");
     return;
   }
-  
+
   var passlower = confirm("Would you like to include lowercase letters?");
   var passupper = confirm("Would you like to include uppercase letters?");
   var passnumber = confirm("Would you like to include numbers?");
