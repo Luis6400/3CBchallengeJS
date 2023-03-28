@@ -11,7 +11,7 @@ The website will ask for password length (from 8-128 Characters) and what kinds 
 
 ## Installation
 
-N/A for this site
+https://luis6400.github.io/3CBchallengeJS/
 
 ## Usage
 

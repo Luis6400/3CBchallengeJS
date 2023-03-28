@@ -7,31 +7,36 @@ function generatePassword(len, low, upp, num, spec) {
   var upalphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
   var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
   var password = "";
-  for (i = 0; i < len; i++) {
+  var i = 0;
+  while (i < len) {
     var rand = Math.floor(Math.random() * 4);
     switch (rand) {
       case 0:
         if (low === true) {
           rand = Math.floor(Math.random() * alphabet.length);
           password += alphabet[rand];
+          i++;
         }
         break;
       case 1:
         if (upp === true) {
           rand = Math.floor(Math.random() * upalphabet.length);
           password += upalphabet[rand];
+          i++;
         }
         break;
       case 2:
         if (num === true) {
           rand = Math.floor(Math.random() * numbers.length);
           password += numbers[rand];
+          i++;
         }
         break;
       case 3:
         if (spec === true) {
           rand = Math.floor(Math.random() * specChar.length);
           password += specChar[rand];
+          i++;
         }
         break;
       case 4:
